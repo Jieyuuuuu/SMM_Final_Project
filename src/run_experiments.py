@@ -43,6 +43,15 @@ METHODS = {
         "extra": ["--focal_gamma", "2.0", "--focal_alpha", "0.75",
                   "--coral_weight", "500.0", "--sotm_threshold", "0.3"],
     },
+    # Ablation: TSET with Focal Loss disabled (BCE) and coral_weight back to
+    # DFA's 1.0 -> isolates whether Focal Loss is what hurts the imbalanced
+    # countries (e.g. cuba). Effectively "DFA + SOTM".
+    "tset_bce": {
+        "script": "run_MultiModalGNN_CrossAttention_CrossCountry_TSET.py",
+        "prefix": "TSETbce",
+        "extra": ["--loss_type", "bce", "--coral_weight", "1.0",
+                  "--sotm_threshold", "0.3"],
+    },
     "dmc": {
         "script": "run_MultiModalGNN_CrossAttention_CrossCountry_DMC.py",
         "prefix": "DMC",
