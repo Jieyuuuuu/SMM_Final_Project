@@ -1,0 +1,24 @@
+# IOHunter+ dependencies
+# NOTE: PyTorch is NOT listed here because the CUDA build needs a special index.
+# Install it first with:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu124
+# (cu124 is used because Python 3.13 wheels are not published on the cu121 index;
+#  CUDA 12.x minor-version compat means a 12.3-capable driver runs cu124 fine.)
+# then: pip install -r requirements.txt
+
+torch_geometric
+numpy
+pandas
+scipy
+networkx
+scikit-learn
+mlflow
+gensim
+tqdm
+matplotlib
+seaborn
+
+# node2vec is installed SEPARATELY with --no-deps because node2vec 0.5.0
+# hard-pins numpy<2, which (a) has no Python 3.13 wheel and (b) conflicts with
+# scipy>=2. Its actual runtime code works fine on numpy 2. After the above:
+#   pip install node2vec --no-deps

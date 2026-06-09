@@ -10,3 +10,12 @@ __pycache__/
 
 # Half-baked / interim experiment outputs
 results/zero-shot_TSET_iran.txt
+
+# virtual Environment
+.venv/
+
+# MLflow tracking artifacts
+src/mlruns/
+
+# numpy metric artifacts
+src/*.npy
